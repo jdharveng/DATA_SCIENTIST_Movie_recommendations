@@ -1,6 +1,6 @@
 # DATA_SCIENTIST_Movie_recommendations
 This project is part of the Openclassrooms DataScientist Curriculum together with CentraleSupélec
-Analysis of TMDb dataset containing 10000 movies
+
 ### by Jérôme d'Harveng
 
 
@@ -17,23 +17,23 @@ We added also the **revenue**, being the _difference between gross and budget_ a
 
 > _Some interesting insights were:_
 > - Even if movies in this DB are from 1927 till 2016, 75% of them were produced after 1999.
-> - Logically 96% of the movies are in color and almost 80% of them are produced in the US, with as consequence that more than 95% of the movies are in English.
+> - Logically 96% of the movies are in color and almost 80% of them were produced in the US, with as consequence that more than 95% of the movies are in English.
 > - The longest movie of the DB is « _Blood in, Blood Out_ » lasting over 5h30min.
 > - The movie having the biggest gross is "_Avatar_" with 760M$
 > - The average _IMDB_score_ is round 6.5 and the movie with the best score (of 9.3) is « _The ShawShank Redemption_ »
 > - The 2 movies with the biggest _success ratio_ (revenue/budget) are « _Paranormal Activity_ » and « _the Blair With Project_ »
 
 ## Recommendation system:
-> -We tried several **dimensional reduction technics** on the cleaned data, in order to allow _proper visualisation_ and to improve the performances of the algorithms. The **PCA** technic didn’t seem well suited in our case so we used **t-SNE**.
+> - We tried several **dimensional reduction technics** on the cleaned data, in order to allow _proper visualisation_ and to improve the performances of the algorithms. The **PCA** technic didn’t seem well suited in our case so we used **t-SNE**.
 > - From the reduced data, we applied a _clustering algorithm_.
 Here we used _K-means++_ and used the « _silhouette coefficient_ » to find the proper amount of clusters.
-> - Within the cluster corresponding to the movie we are searching recommendations for, we search _similarities intracluster_. Here we used « _cosine similarity_ » as measure.
+> - Within the cluster corresponding to the movie we are searching recommendations for, we searched _similarities intracluster_. Here we used « _cosine similarity_ » as measure.
 
 
 > So our recommendation system works finally as followed:
-- 1. Find the cluster label related to the movie we are searching for
-- 2. Take the complete cluster corresponding to this label
-- 3. Within this cluster, compute the cosine similarity
-- 4. Take the 5 movies with the highest similarity scores.
+1. Find the cluster label related to the movie we are searching for
+2. Take the complete cluster corresponding to this label
+3. Within this cluster, compute the cosine similarity
+4. Take the 5 movies with the highest similarity scores.
 
 Here we did what’s called **« Content Filtering »**, everyone is getting the same recommendations. This is opposed to _« collaborative Filtering »_, where we need also information about the users.
