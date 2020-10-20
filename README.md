@@ -31,9 +31,9 @@ Here we used _K-means++_ and used the « _silhouette coefficient_ » to find t
 
 
 > So our recommendation system works finally as follows:
-1. Find the cluster label related to the movie we are searching for
-2. Take the complete cluster corresponding to this label
-3. Within this cluster, compute the cosine similarity
-4. Take the 5 movies with the highest similarity scores.
+> 1. Find the cluster label related to the movie we are searching for
+> 2. Take the complete cluster corresponding to this label
+> 3. Within this cluster, compute the cosine similarity
+> 4. Take the 5 movies with the highest similarity scores.
 
-Here we did what’s called **« Content Filtering »**, everyone is getting the same recommendations. This is opposed to _« collaborative Filtering »_, where we need also information about the users.
+> Here we did what’s called **« Content Filtering »**, everyone is getting the same recommendations. This is opposed to _« collaborative Filtering »_, where we need also information about the users.
