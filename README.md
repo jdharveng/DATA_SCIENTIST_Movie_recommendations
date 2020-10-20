@@ -15,7 +15,7 @@ We added also the **revenue**, being the _difference between gross and budget_ a
 ## Data exploration:
 > After having cleaned the data, and before moving to the recommendation system itself, we first did some exploration to get a better understanding of our data.
 
-> _Some interesting insights were:_
+> **_Some interesting insights were:_**
 > - Even if movies in this DB are from 1927 till 2016, 75% of them were produced after 1999.
 > - Logically 96% of the movies are in color and almost 80% of them were produced in the US, with as consequence that more than 95% of the movies are in English.
 > - The longest movie of the DB is « _Blood in, Blood Out_ » lasting over 5h30min.
@@ -30,7 +30,7 @@ Here we used _K-means++_ and used the « _silhouette coefficient_ » to find t
 > - Within the cluster corresponding to the movie we are searching recommendations for, we searched _similarities intracluster_. Here we used « _cosine similarity_ » as measure.
 
 
-> So our recommendation system works finally as followed:
+> So our recommendation system works finally as follows:
 1. Find the cluster label related to the movie we are searching for
 2. Take the complete cluster corresponding to this label
 3. Within this cluster, compute the cosine similarity
